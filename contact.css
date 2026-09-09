@@ -1,0 +1,59 @@
+header{
+    background-color:skyblue;
+    height:50vh;
+    color: white;
+    text-align: center;
+    padding-top:0px;
+}
+body{
+    margin: 0;
+    font-size:25px;
+    background-color: azure;
+    height: 50vh;
+}
+
+button{
+    height: 40px;
+    width: 140px;
+    border: none;
+    border-radius:10px;
+    courser:pointer;
+    background-color:skyblue;
+    color:white;
+    text-decoration: none;
+    margin:15px;
+}
+header h1{
+    color:white;
+    margin: 0;
+}
+submit{
+    height:50px;
+    padding: 5px;
+    margin: none;
+    counter: pointer;
+    background-color:white;
+    color:white;
+}
+input{
+    margin:10px;
+    border-radius: 5px;
+    border:1px solid lightgrey;
+    height:25px;
+}
+section{
+      height:40px;
+      border:1px solid grey ;
+      border-radius:10px;
+      margin-bottom:90px;
+      text-align: center;
+      margin: 20px;
+      height:80vh;
+      padding:20px;
+      padding-top:200px;
+
+}
+h1{
+    color:skyblue;
+    font-size:70px;
+}

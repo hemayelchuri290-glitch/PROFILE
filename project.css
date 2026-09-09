@@ -1,0 +1,40 @@
+section{
+      height:40px;
+      border:1px solid grey ;
+      border-radius:10px;
+      margin-bottom:90px;
+      text-align: center;
+      margin: 20px;
+      height:80vh;
+      padding:20px;
+      padding-top:200px;
+
+}
+h1{
+    color:skyblue;
+    font-size:70px;
+}
+header{
+    background-color:skyblue;
+    height:60vh;
+    color: white;
+    text-align: center;
+    padding-top:250px;
+}
+body{
+    margin: 0;
+    font-size:20px;
+    background-color: azure;
+    height: 40vh;
+}
+button{
+    height: 40px;
+    width: 140px;
+    border: none;
+    border-radius:10px;
+    courser:pointer;
+    background-color:skyblue;
+    color:white;
+    text-decoration: none;
+    margin:30px
+}

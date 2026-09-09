@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI RGB Mode Button</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#050505;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.ai-button{
+    --x:50%;
+    --y:50%;
+
+    position:relative;
+    padding:18px 50px;
+    border:none;
+    border-radius:50px;
+    background:#111;
+    color:#fff;
+    font-size:20px;
+    font-weight:bold;
+    letter-spacing:2px;
+    cursor:pointer;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.ai-button span{
+    position:relative;
+    z-index:2;
+}
+
+/* RGB Moving Border */
+.ai-button::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    padding:2px;
+    border-radius:50px;
+
+    background:
+    radial-gradient(circle 90px at var(--x) var(--y),
+        red,
+        lime,
+        deepskyblue,
+        transparent 80%);
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+
+    opacity:0;
+    transition:.2s;
+}
+
+.ai-button:hover::before{
+    opacity:1;
+}
+
+/* RGB Glow */
+.ai-button::after{
+    content:"";
+    position:absolute;
+    inset:-30%;
+    background:
+    radial-gradient(circle at var(--x) var(--y),
+        rgba(255,0,0,.4),
+        rgba(0,255,0,.3),
+        rgba(0,180,255,.3),
+        transparent 60%);
+    filter:blur(30px);
+    opacity:0;
+    transition:.3s;
+}
+
+.ai-button:hover::after{
+    opacity:1;
+}
+
+.ai-button:hover{
+    transform:scale(1.05);
+}
+</style>
+</head>
+<body>
+
+<button class="ai-button" id="aiButton">
+    <span>✨ AI MODE</span>
+</button>
+
+<script>
+const btn = document.getElementById("aiButton");
+
+btn.addEventListener("mousemove", (e)=>{
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    btn.style.setProperty("--x", x + "px");
+    btn.style.setProperty("--y", y + "px");
+});
+</script>
+
+</body>
+</html>
